@@ -38,8 +38,8 @@ public List<Todo> getAll(){
 	return service.getAll();
 }
 
-@DeleteMapping("/{id}")
-public List<Todo> delete(@PathVariable Long Id) {
+@DeleteMapping("{id}")
+public List<Todo> delete(@PathVariable("id") Long Id) {
     return service.delete(Id);
 }
 

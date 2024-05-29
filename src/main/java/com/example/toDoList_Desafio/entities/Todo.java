@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 public class Todo {
 @jakarta.persistence.Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-private Long Id;
+private Long id;
 private String name;
 private String description;
 private boolean accomplished;
@@ -22,9 +22,13 @@ public Todo() {
 
 
 
+
+
+
+
 public Todo(Long id, String name, String description, boolean accomplished, int priority) {
 	super();
-	Id = id;
+	this.id = id;
 	this.name = name;
 	this.description = description;
 	this.accomplished = accomplished;
@@ -33,12 +37,16 @@ public Todo(Long id, String name, String description, boolean accomplished, int 
 
 
 
+
+
+
+
 public Long getId() {
-	return Id;
+	return id;
 }
 
 public void setId(Long id) {
-	Id = id;
+	this.id = id;
 }
 
 public String getName() {
