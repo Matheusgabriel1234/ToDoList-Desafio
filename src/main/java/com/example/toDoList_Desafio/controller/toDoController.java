@@ -12,6 +12,10 @@ import org.springframework.web.service.annotation.DeleteExchange;
 import com.example.toDoList_Desafio.entities.Todo;
 import com.example.toDoList_Desafio.service.todoService;
 
+import jakarta.validation.Valid;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,8 +33,8 @@ this.service = service;
 }
 
 @PostMapping
-public List<Todo> create(@RequestBody Todo todo){
-	return service.create(todo);
+  public ResponseEntity<List<Todo>> create(@RequestBody @Valid Todo todo){
+	return ResponseEntity.status(HttpStatus.CREATED).body(service.create(todo));
 }
 
 @GetMapping

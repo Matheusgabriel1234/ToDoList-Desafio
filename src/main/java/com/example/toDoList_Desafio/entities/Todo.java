@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+
 
 @Entity
 @Table(name = "Todos")
@@ -11,7 +13,9 @@ public class Todo {
 @jakarta.persistence.Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Long id;
+@NotBlank
 private String name;
+@NotBlank
 private String description;
 private boolean accomplished;
 private int priority;
