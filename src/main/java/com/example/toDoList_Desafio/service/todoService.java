@@ -29,11 +29,13 @@ return getAll();
 }
 
 
-public List<Todo> update(){
+public List<Todo> update(Todo todo){
+repository.save(todo);
 return getAll();
 }
 
-public List<Todo> delete(){
+public List<Todo> delete(Long id){
+repository.deleteById(id);	
 return getAll();
 }
 	
